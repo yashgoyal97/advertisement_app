@@ -364,6 +364,7 @@ class ManagerPage extends PolymerElement {
         let bookObj = { timeSlots: this.timeSlots };
         this.action = 'bookSlot';
         this.loading = true;
+         this.bookedSlots=[];
         this._makeAjax(`${rBaseUrl}/widebroadcast/users/${this.salesManagerId}/slots`, 'post', bookObj);
     }
 
@@ -403,6 +404,7 @@ class ManagerPage extends PolymerElement {
             case 'bookSlot':
                 console.log(event.detail.response);
                 if (event.detail.response.statusCode === 200) {
+                     this.timeSlots=[];
                     this.$.toastBook.open();
                     this.connectedCallback();
                     this.$.bookSlotDialog.close();
