@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>advertisement-app test</title>
+
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../node_modules/@polymer/test-fixture/test-fixture.js"></script>
+    <script src="../../node_modules/mocha/mocha.js"></script>
+    <script src="../../node_modules/chai/chai.js"></script>
+    <script src="../../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../../node_modules/wct-mocha/wct-mocha.js"></script>
+
+    <script type="module" src="../../src/advertisement-app/admin-page.js"></script>
+
+    <script>
+        window.MyAppGlobals = { rootPath: '/' };
+        window.gBaseUrl = 'http://10.117.189.181:9090';
+        window.aBaseUrl = 'http://10.117.189.147:9090';
+        window.rBaseUrl = 'http://10.117.189.106:9090';
+    // window.mockUrl = ' http://localhost:3000';
+    </script>
+
+
+</head>
+
+<body>
+
+    <test-fixture id="adminPage">
+        <template>
+            <admin-page></admin-page>
+        </template>
+    </test-fixture>
+
+    <script>
+        describe('admin-page ', function () {
+
+            var element = fixture('adminPage');
+            var elementShadowRoot = element.shadowRoot;
+            describe('when the component is rendered', function () {
+                beforeEach(function () {
+                    element = fixture('adminPage');
+                    elementShadowRoot = element.shadowRoot;
+                });
+                describe('When the addSlot button is clicked', () => {
+                    let slot;
+                    let _addSlot;
+                    beforeEach(() => {
+                        slot = elementShadowRoot.querySelector('#slot');
+                        _addSlot = sinon.spy();
+                        slot.addEventListener('click', _addSlot);
+                    });
+                    afterEach(() => {
+                        sinon.restore();
+                    });
+                    it('should call _addSlot method once', function () {
+                        slot.click();
+                        expect(_addSlot.callCount).to.be.equal(1)
+                    })
+                })
+                describe('When the updateSlot button is clicked', () => {
+                    let updateSlot;
+                    let _updateupdateSlot;
+                    beforeEach(() => {
+                        updateSlot = elementShadowRoot.querySelector('#updateSlot');
+                        _updateSlot = sinon.spy();
+                        updateSlot.addEventListener('click', _updateSlot);
+                    });
+                    afterEach(() => {
+                        sinon.restore();
+                    });
+                    it('should call _updateSlot method once', function () {
+                        updateSlot.click();
+                        expect(_updateSlot.callCount).to.be.equal(1)
+                    })
+                })
+                describe('When the close button is clicked', () => {
+                    let close;
+                    let _closeDialog;
+                    beforeEach(() => {
+                        close = elementShadowRoot.querySelector('#close');
+                        _closeDialog = sinon.spy();
+                        close.addEventListener('click', _closeDialog);
+                    });
+                    afterEach(() => {
+                        sinon.restore();
+                    });
+                    it('should call _closeDialog method once', function () {
+                        close.click();
+                        expect(_closeDialog.callCount).to.be.equal(1)
+                    })
+                })
+                describe('When the goToHomeBtn button is clicked', () => {
+                    let goToHomeBtn;
+                    let _handleLogout;
+                    beforeEach(() => {
+                        goToHomeBtn = elementShadowRoot.querySelector('#goToHomeBtn');
+                        _handleLogout = sinon.spy();
+                        goToHomeBtn.addEventListener('click', _handleLogout);
+                    });
+                    afterEach(() => {
+                        sinon.restore();
+                    });
+                    it('should call _handleLogout method once', function () {
+                        goToHomeBtn.click();
+                        expect(_handleLogout.callCount).to.be.equal(1)
+                    })
+                })
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>

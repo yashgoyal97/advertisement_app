@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>advertisement-app test</title>
+
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../node_modules/@polymer/test-fixture/test-fixture.js"></script>
+    <script src="../../node_modules/mocha/mocha.js"></script>
+    <script src="../../node_modules/chai/chai.js"></script>
+    <script src="../../node_modules/wct-mocha/wct-mocha.js"></script>
+
+    <script type="module" src="../../src/advertisement-app/sales-page.js"></script>
+</head>
+
+<body>
+
+    <test-fixture id="salesPage">
+        <template>
+            <sales-page></sales-page>
+        </template>
+    </test-fixture>
+
+    <script>
+        describe('sales-page', function () {
+
+            var element = fixture('salesPage');
+            var elementShadowRoot;
+            describe('when the component is rendered', function () {
+                beforeEach(function () {
+                    element = fixture('salesPage');
+                    elementShadowRoot = element.shadowRoot;
+                });
+                it('should render container element', function () {
+                    let container = elementShadowRoot.querySelector('#container')
+                    expect(container).to.be.exist;
+                    expect(container).to.not.null;
+                });
+
+                it('should render header element', function () {
+                    let header = elementShadowRoot.querySelector('header')
+                    expect(header).to.be.exist;
+                    expect(header).to.not.null;
+                });
+                it('should render main element', function () {
+                    let main = elementShadowRoot.querySelector('main')
+                    expect(main).to.be.exist;
+                    expect(main).to.not.null;
+                });
+                it('should render div element', function () {
+                    let logo = elementShadowRoot.querySelector('#logo')
+                    expect(logo).to.be.exist;
+                    expect(logo).to.not.null;
+                });
+                it('should render paper-button element', function () {
+                    let paperButton = elementShadowRoot.querySelector('#goToHomeBtn')
+                    expect(paperButton).to.be.exist;
+                    expect(paperButton).to.not.null;
+                });
+                it('should render table element', function () {
+                    let table = elementShadowRoot.querySelector('table')
+                    expect(table).to.be.exist;
+                    expect(table).to.not.null;
+                });
+                it('should render table head element', function () {
+                    let thead = elementShadowRoot.querySelector('thead')
+                    expect(thead).to.be.exist;
+                    expect(thead).to.not.null;
+                });
+                it('should render table body element', function () {
+                    let tbody = elementShadowRoot.querySelector('tbody')
+                    expect(tbody).to.be.exist;
+                    expect(tbody).to.not.null;
+                });
+                it('should render table row element', function () {
+                    let tr = elementShadowRoot.querySelector('tr')
+                    expect(tr).to.be.exist;
+                    expect(tr).to.not.null;
+                });
+                it('should render table data element', function () {
+                    let td = elementShadowRoot.querySelector('td')
+                    expect(td).to.be.exist;
+                    expect(td).to.not.null;
+                });
+                it('should render iron-ajax component', function () {
+                    let ironAjax = elementShadowRoot.querySelector('#ajax')
+                    expect(ironAjax).to.be.exist;
+                    expect(ironAjax).to.not.null;
+                });
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>

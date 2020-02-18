@@ -1,0 +1,31 @@
+{
+  "name": "advertisement",
+  "dependencies": {
+    "@fooloomanzoo/datetime-picker": "github:fooloomanzoo/datetime-picker",
+    "@polymer/app-route": "^3.0.2",
+    "@polymer/gold-cc-cvc-input": "^3.0.2",
+    "@polymer/gold-cc-expiration-input": "^3.0.1",
+    "@polymer/gold-cc-input": "^3.0.1",
+    "@polymer/iron-ajax": "^3.0.1",
+    "@polymer/iron-form": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/iron-pages": "^3.0.1",
+    "@polymer/paper-button": "^3.0.1",
+    "@polymer/paper-card": "^3.0.1",
+    "@polymer/paper-dialog": "^3.0.1",
+    "@polymer/paper-input": "^3.2.0",
+    "@polymer/paper-progress": "^3.0.1",
+    "@polymer/paper-toast": "^3.0.1",
+    "@polymer/polymer": "^3.0.0",
+    "@vaadin/vaadin-select": "^2.1.7",
+    "highcharts-chart": "^3.0.1",
+    "sinon": "^8.1.1"
+  },
+  "devDependencies": {
+    "@polymer/test-fixture": "^4.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "wct-mocha": "^1.0.1"
+  }
+}

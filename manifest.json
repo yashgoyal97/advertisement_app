@@ -1,0 +1,6 @@
+{
+  "name": "advertisement",
+  "short_name": "advertisement",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>advertisement</title>
+  <meta name="description" content="advertisement description">
+
+  <style>
+    body {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      background-image: url('images/background.jpg');
+    }
+  </style>
+
+  <script>
+    window.MyAppGlobals = { rootPath: '/' };
+    window.gBaseUrl = 'http://10.117.189.181:9090';
+    window.aBaseUrl = 'http://10.117.189.181:9090';
+    window.rBaseUrl = 'http://10.117.189.181:9090';
+    // window.mockUrl = ' http://localhost:3000';
+  </script>
+
+  <!-- See https://goo.gl/OOhYW5 -->
+  <link rel="manifest" href="manifest.json">
+
+  <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <script type="module" src="src/advertisement-app/advertisement-app.js" crossorigin></script>
+</head>
+
+<body>
+  <advertisement-app></advertisement-app>
+</body>
+
+</html>
